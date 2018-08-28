@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row shadow p-3 mb-5 bg-white rounded">
+    <div class="col-sm-12 text-primary">
+      <h4>{{post.title}}</h4>
+    </div>
+
+    <form ng-submit="addComment()">
+      <h3>Submmit Your Comment</h3>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Put your comment" ng-model="comment">
+      </div>
+      <button type="submit" class="btn btn-primary">Comment</button>
+    </form>
+
+    <div class="col-sm-12 text-secondary" ng-repeat="comment in comments">
+      <p><i class="far fa-comments fa-lg"></i>{{comment}}</p>
+    </div>
+  </div>
+</div>
