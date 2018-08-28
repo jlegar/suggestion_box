@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row shadow p-3 mb-5 bg-white rounded" ng-repeat="post in posts | orderBy: '-upvotes'">
+    <div class="col-sm-12 text-primary">
+      <h4>{{post.title}}</h4>
+    </div>
+    <div class="col-sm-4 text-success">
+      <p><i class="fas fa-plus-circle fa-lg f055" ng-click="addVote(post)"></i> Votes: {{post.upvotes}}</p>
+    </div>
+    <div class="col-sm-8 text-secondary">
+      <p>Comments: {{post.comments}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <form ng-submit="addSuggestion()">
+    <h3>Submmit Your Suggestion</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Put your suggestion" ng-model="title">
+    </div>
+    <button type="submit" class="btn btn-primary">Suggest</button>
+  </form>
+</div>
