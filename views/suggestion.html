@@ -7,15 +7,18 @@
     <div class="col-sm-12">
       <form ng-submit="addComment()">
         <h5>Submmit Your Comment</h5>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Put your comment" ng-model="newComment">
+        <div class="form-row">
+          <div class="form-group col-lg-8 col-md-12">
+            <input type="text" class="form-control" placeholder="Put your comment" ng-model="newComment">
+          </div>
+          <button type="submit" class="btn btn-primary">Add comment</button>
         </div>
-        <button type="submit" class="btn btn-primary">Add comment</button>
       </form>
+      <br>
     </div>
 
     <div class="col-sm-12 text-secondary" ng-repeat="comment in comments">
-      <p><i class="far fa-comments fa-lg"></i>{{comment}}</p>
+      <p><i class="far fa-comments fa-lg"></i> {{comment}}</p>
     </div>
   </div>
 </div>
