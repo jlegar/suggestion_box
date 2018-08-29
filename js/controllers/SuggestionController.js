@@ -1,5 +1,5 @@
-app.controller('SuggestionController', ['$scope', '$routeParams', function($scope, $routeParams){
-  $scope.post = $scope.posts[$routeParams.id];
+app.controller('SuggestionController', ['$scope', '$routeParams', 'suggestions' function($scope, $routeParams, suggestions){
+  $scope.post = suggestions.get()[$routeParams.id];
   $scope.comments = $scope.post.comments;
   $scope.newComment = '';
   $scope.addComment = function(){
