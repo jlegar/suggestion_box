@@ -1,7 +1,7 @@
 app.controller('MainController', ['$scope', 'suggestions', function($scope, suggestions){
   $scope.title = '';
-  localStorage.setItem('prueba', 'que fuerte!');
   $scope.posts = suggestions.posts;
+  localStorage.setItem('posts', JSON.stringify($scope.posts));
   $scope.addSuggestion = function(){
     if (!$scope.title || ($scope.title === '')) {
       return;
