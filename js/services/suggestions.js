@@ -1,6 +1,5 @@
 app.factory('suggestions', [function(){
-  var demoSuggestions = {
-    posts : [
+  var posts = [
       {
         title: 'Free pizza at club meetings',
         upvotes: 15,
@@ -21,8 +20,19 @@ app.factory('suggestions', [function(){
         upvotes: 3,
         comments: []
       }
-    ]
+    ];
+
+  function set(data){
+    posts.push(data);
+    localStorage.posts = JSON.stringify(posts);
   };
 
-  return demoSuggestions;
+  function get(){
+    return posts;
+  };
+
+  return {
+    set: set,
+    get: get
+  };
 }]);
